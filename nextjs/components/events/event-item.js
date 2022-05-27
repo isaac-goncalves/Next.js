@@ -5,9 +5,9 @@ export default function EventItem(props) {
   const { image, title, date, location, id } = props;
 
   const humanReadablaDate = new Date(date).toLocaleDateString("en-US", {
-    day: "numeric",
-    month: "long",
-    year: numeric,
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
   });
 
   const formattedAddress = location.replace(", ", "\n");
@@ -16,16 +16,16 @@ export default function EventItem(props) {
 
   return (
     <li>
-      <img src="" alt="" />
+      <img src={'/' + image} alt={title} />
       <div>
         <div>
-          <h2>title</h2>
+          <h2>{title}</h2>
         </div>
         <div>
-          <time>Date</time>
+          <time>{humanReadablaDate}</time>
         </div>
         <div>
-          <address>ADRESS</address>
+          <address>{formattedAddress}</address>
         </div>
         <Link href={exploreLink}>Explore Event</Link>
       </div>
